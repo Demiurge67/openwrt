@@ -64,14 +64,14 @@ case "$FIRMWARE" in
 		CI_UBIPART="UBI_DEV"
 		caldata_extract_ubi "Factory" 0x0 0x1000
 		;;
-	tplink,ax80-v1)
-		ln -sf /tmp/tp_data/MT7986_EEPROM.bin \
-			/lib/firmware/$FIRMWARE
-		;;
 	esac
 	;;
 "mediatek/mt7986_eeprom_mt7976_dual.bin")
 	case "$board" in
+	tplink,ax80-v1)
+		ln -sf /tmp/tp_data/MT7986_EEPROM.bin \
+			/lib/firmware/$FIRMWARE
+		;;
 	asus,tuf-ax6000)
 		CI_UBIPART="UBI_DEV"
 		caldata_extract_ubi "Factory" 0x0 0x1000
