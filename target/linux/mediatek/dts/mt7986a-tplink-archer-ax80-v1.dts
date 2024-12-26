@@ -133,10 +133,14 @@
 			
 		};
 
-    switch: switch@0 {
-		compatible = "mediatek,mt7531";
-		reg = <31>;
-		reset-gpios = <&pio 5 0>;
+    switch: switch@1f {
+			compatible = "mediatek,mt7531";
+			reg = <31>;
+			reset-gpios = <&pio 5 GPIO_ACTIVE_HIGH>;
+			interrupt-controller;
+			#interrupt-cells = <1>;
+			interrupt-parent = <&pio>;
+			interrupts = <66 IRQ_TYPE_LEVEL_HIGH>;
 	};
 };
 &spi0 {
@@ -218,6 +222,7 @@
 
 		port@6 {
 			reg = <6>;
+			label = "cpu";
 			ethernet = <&gmac0>;
 			phy-mode = "2500base-x";
 
