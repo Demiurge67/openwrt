@@ -54,4 +54,4 @@ jobs:
     - name: Build OpenWRT
       run: |
          make defconfig
-         make -j$(nproc) download world V=s
+         make -j$(nproc) download world 
