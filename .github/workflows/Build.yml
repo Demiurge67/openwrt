@@ -28,4 +28,6 @@ jobs:
         ./scripts/feeds install -a
 
     - name: Build OpenWRT
-      run:  make -j$(nproc) download clean world
+      run: |
+         make defconfig
+         make -j$(nproc) download clean world
