@@ -12,15 +12,39 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: '3.x'
 
+    - name: Cache OpenWRT build
+
+      uses: actions/cache@v4
+
+      with:
+
+        path: |
+
+          .config
+
+          bin/
+
+          feeds/
+
+        key: ${{ runner.os }}-openwrt-${{ hashFiles('**/feeds.conf.default') }}
+
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y build-essential libncurses5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip 
+      run: sudo apt-get update && sudo apt-get install -y build-essential libncurses5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip bison flex ccache
+
+    - name: Set up ccache
+
+      run: |
+
+        export CC="ccache gcc"
+
+        export CXX="ccache g++"
       
     - name: Update feeds
       run: |
@@ -30,4 +54,4 @@ jobs:
     - name: Build OpenWRT
       run: |
          make defconfig
-         make -j$(nproc) download clean world
+         make -j$(nproc) download world V=s
