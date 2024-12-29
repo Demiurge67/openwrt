@@ -166,6 +166,7 @@
 		partition@200000 {
 			label = "u-boot-env";
 			reg = <0x0200000 0x0100000>;
+			read-only;
 		};
 
 		partition@300000 {
@@ -176,21 +177,25 @@
 		partition@3500000 {
 			label = "ubi1";
 			reg = <0x3500000 0x3200000>;
+			read-only;
 		};
 
 		partition@6700000 {
 			label = "userconfig";
 			reg = <0x6700000 0x800000>;
+			read-only;
 		};
 
 		factory:partition@6f00000 {
 			label = "tp_data";
 			reg = <0x6f00000 0x400000>;
+			read-only;
 		};
 
 		partition@7300000 {
 			label = "mali_data";
 			reg = <0x7300000 0x800000>;
+			read-only;
 		};
 	};
 };
@@ -313,8 +318,6 @@
 	pinctrl-names = "default", "dbdc";
 	pinctrl-0 = <&wf_2g_5g_pins>;
 	pinctrl-1 = <&wf_dbdc_pins>;
-
-	mediatek,mtd-eeprom = <&factory 0x0>;
 };
 &i2c0 {
 	status = "okay";
