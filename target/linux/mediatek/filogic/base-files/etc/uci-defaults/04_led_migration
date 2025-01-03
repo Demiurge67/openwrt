@@ -1,0 +1,10 @@
+. /lib/functions/migrations.sh
+board=$(board_name)
+case "$board" in
+tplink,archer-ax80-v1)
+	migrate_leds ':chan=-'
+	;;
+esac
+remove_devicename_leds
+migrations_apply system
+exit 0
