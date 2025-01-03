@@ -76,6 +76,10 @@ case "$FIRMWARE" in
 		CI_UBIPART="UBI_DEV"
 		caldata_extract_ubi "Factory" 0x0 0x1000
 		;;
+	tplink,ax80-v1)
+		ln -sf /tmp/tp_data/MT7986_EEPROM.bin \
+			/lib/firmware/$FIRMWARE
+		;;	
 	glinet,gl-mt6000|\
 	jdcloud,re-cp-03)
 		caldata_extract_mmc "factory" 0x0 0x1000
