@@ -139,7 +139,7 @@ platform_do_upgrade() {
 		CI_KERNPART="production"
 		emmc_do_upgrade "$1"
 		;;
-	tplink,ax80-v1|\
+	tplink,archer-ax80-v1|\
 	mercusys,mr90x-v1)
 		CI_UBIPART="ubi0"
 		nand_do_upgrade "$1"
