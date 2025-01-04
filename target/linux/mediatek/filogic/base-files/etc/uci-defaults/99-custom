@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci set wireless.@wifi-device[0].disabled='0'
+uci set wireless.@wifi-iface[0].encryption='psk2'
+uci set wireless.@wifi-iface[0].ssid="TP-AX80_2.4"
+uci set wireless.@wifi-iface[0].key="123456789"
+uci set wireless.@wifi-device[1].disabled='0'
+uci set wireless.@wifi-iface[1].encryption='psk2'
+uci set wireless.@wifi-iface[1].ssid="TP-AX80_5"
+uci set wireless.@wifi-iface[1].key="123456789"
+uci commit wireless

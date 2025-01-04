@@ -810,7 +810,7 @@ define Device/tplink_archer-ax80-v1
   DEVICE_VENDOR := TP-Link
   DEVICE_MODEL := Archer AX80V1
   DEVICE_DTS_DIR := ../dts
-  DEVICE_PACKAGES := kmod-mt7916-firmware kmod-usb3 kmod-mt7986-firmware mt7986-wo-firmware
+  DEVICE_PACKAGES := kmod-leds-lp55xx-common kmod-leds-lp5523 kmod-mt7916-firmware kmod-usb3 kmod-mt7986-firmware mt7986-wo-firmware
   DEVICE_DTS := mt7986a-tplink-archer-ax80-v1
   UBINIZE_OPTS := -E 5
   BLOCKSIZE := 128k
