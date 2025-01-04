@@ -807,7 +807,7 @@ endef
 TARGET_DEVICES += routerich_ax3000
 
 
-define Device/tplink_ax80-v1
+define Device/tplink_archer-ax80-v1
   DEVICE_VENDOR := TP-Link
   DEVICE_MODEL := Archer AX80V1
   DEVICE_DTS_DIR := ../dts
@@ -820,7 +820,7 @@ define Device/tplink_ax80-v1
   IMAGE_SIZE := 51200k
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
-TARGET_DEVICES += tplink_ax80-v1
+TARGET_DEVICES += tplink_archer-ax80-v1
 
 define Device/tplink_tl-xdr-common
   DEVICE_VENDOR := TP-Link
