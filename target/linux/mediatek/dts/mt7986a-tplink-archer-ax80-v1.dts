@@ -21,6 +21,7 @@
 	memory {
 		reg = <0 0x40000000 0 0x20000000>;
 	};
+
 	keys {
 		compatible = "gpio-keys-polled";
 		poll-interval = <100>;
@@ -31,18 +32,21 @@
 			gpios = <&pio 7 GPIO_ACTIVE_LOW>;
 			linux,input-type = <1>;
 		};
+
 		ledswitch {
 			label = "ledswitch";
 			linux,code = <KEY_BRIGHTNESS_ZERO>;
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 			linux,input-type = <1>;
 		};
+
 		wps {
 			label = "wps";
 			linux,code = <KEY_WPS_BUTTON>;
 			gpios = <&pio 10 GPIO_ACTIVE_LOW>;
 			linux,input-type = <1>;
 		};
+
 		wifi {
 			label = "wlan";
 			linux,code = <KEY_WLAN>;
@@ -79,9 +83,11 @@
 		status = "okay";
 	};
 };
+
 &crypto {
 	status = "okay";
 };
+
 &i2c0 {
         pinctrl-names = "default";
         pinctrl-0 = <&i2c_pins>;
@@ -143,6 +149,7 @@
 			interrupts = <66 IRQ_TYPE_LEVEL_HIGH>;
 	};
 };
+
 &spi0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&spi_flash_pins>;
@@ -317,6 +324,7 @@
 	pinctrl-0 = <&wf_2g_5g_pins>;
 	pinctrl-1 = <&wf_dbdc_pins>;
 };
+
 i2c0 {
 	status = "okay";
 
